@@ -27,7 +27,7 @@ namespace ExamCS
 			{
 				// В процессе тренировки пилотов самолета используется только один объект самолета
 				Airplane plane = new Airplane();
-				plane.Fly();
+				plane.Showmenu();
 			}
 			catch (AirplaneCrushed ac)
 			{

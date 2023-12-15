@@ -23,6 +23,7 @@ namespace ExamCS
 		                                             // Фукция вывода рекомендуемой высоты полета
 		public void RecomendedHight(int speed, int height)
 		{
+			
 			int recomended = 7 * speed - adjustment; // Значение рекомендованой высоты
 
 			int difference;                          // Разница между рекомендованой и текущей высотой
@@ -30,7 +31,7 @@ namespace ExamCS
 				difference = height - recomended;
 			else
 				difference = recomended - height;
-
+			
 			Console.WriteLine($"Диспетчер {Name}: Рекомендуемая высота полета: {recomended} м.");
 
 			if (speed > 1000)// Превышение максимальной скорости

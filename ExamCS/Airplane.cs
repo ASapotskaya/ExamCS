@@ -52,7 +52,7 @@ namespace ExamCS
 				else if (position >= 0 && position <= dispatchers.Count - 1)
 				{
 					ChangeEvent -= dispatchers[position].RecomendedHight;                 // Отписка от события
-					Console.WriteLine($"Диспетчер {dispatchers[position].Name} удален!\a");
+					Console.WriteLine($"\nДиспетчер {dispatchers[position].Name} удален!\n");
 					TotalPenalty += dispatchers[position].Penalty;                       // Сохранение штрафных очков, полученных от удаляемого диспетчера
 					dispatchers.RemoveAt(position);                                      // Удаление из списка
 				}
@@ -71,7 +71,7 @@ namespace ExamCS
 					Console.WriteLine($"{dispatchers.IndexOf(i) + 1}. {i.Name}");
 			}
 
-			public void Fly()
+			public void Showmenu()
 			{
 				Console.WriteLine("Управление:\n+(плюс) - добавить нового диспетчера," +
 					"\n-(минус) - удалить выбраного диспетчера,\n" +
@@ -120,7 +120,8 @@ namespace ExamCS
 				
 					if(dispatchers.Count >= 2 && CurrentSpeed >= 50)
 					{
-						Console.WriteLine();
+					Console.Clear();
+					Console.WriteLine();
 						if (!IsFlyBegin)                                                             // Оповещение о начале полета
 							Console.WriteLine("Полет начался!\a");
 						IsFlyBegin = true;
@@ -132,20 +133,18 @@ namespace ExamCS
 						if (CurrentSpeed == 1000)
 						{
 							IsSpeedGained = true;
-							Console.WriteLine("\nВы набрали максимальную скорость. Ваша задача - посадить самолет!\a");
+							Console.WriteLine("\nВы набрали максимальную скорость. Ваша задача - посадить самолет!\n");
 						}
 						else if (IsSpeedGained && CurrentSpeed <= 50)// Управление самолетом диспетчерами прекращается
 						{
 							Console.WriteLine("\nПолет закончился!\a");
-						
-
 							break;// Выход из цикла
 						}
 					}
 					else
 					{
 						Console.WriteLine("Добавлено недостаточно диспетчеров. Вы в тренировочном режиме.");
-						Console.WriteLine($"Скорость: {CurrentSpeed} км/ч Высота: {CurrentHeight} м");
+						
 					}
 				// Перебор всех диспетчеров в коллекции и суммирование 
 				// всех штрафныех очков в общую сумму
@@ -160,10 +159,10 @@ namespace ExamCS
 					Console.WriteLine($"{i.Name}: {i.Penalty}");
 					sw.WriteLine($"{i.Name}: {i.Penalty}"); //запись в файл
 				}
-				sw.Close();
-				Console.WriteLine($"штрафные очки: {TotalPenalty}");
-				Console.WriteLine($"Скорость: {CurrentSpeed} км/ч Высота: {CurrentHeight} м");
-			}
+					sw.Close();
+					Console.WriteLine($"штрафные очки: {TotalPenalty}");
+					Console.WriteLine($"Скорость: {CurrentSpeed} км/ч Высота: {CurrentHeight} м");
+				}
 			}
 		}
 
