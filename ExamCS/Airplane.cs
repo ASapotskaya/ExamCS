@@ -157,10 +157,10 @@ namespace ExamCS
 				{
 					TotalPenalty += i.Penalty;
 					Console.WriteLine($"{i.Name}: {i.Penalty}");
-					sw.WriteLine($"{i.Name}: {i.Penalty}"); //запись в файл
+					sw.WriteLine($"Диспетчер: {i.Name}: Штрафные очки: {i.Penalty}"); //запись в файл
 				}
 					sw.Close();
-					Console.WriteLine($"штрафные очки: {TotalPenalty}");
+					//Console.WriteLine($"штрафные очки: {TotalPenalty}");
 					Console.WriteLine($"Скорость: {CurrentSpeed} км/ч Высота: {CurrentHeight} м");
 				}
 			}

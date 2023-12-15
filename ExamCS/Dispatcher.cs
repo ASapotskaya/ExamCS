@@ -20,7 +20,7 @@ namespace ExamCS
 			adjustment = r.Next(-200, 200);
 			Penalty = 0;
 		}
-		                                             // Фукция вывода рекомендуемой высоты полета
+		                                             // Функция вывода рекомендуемой высоты полета
 		public void RecomendedHight(int speed, int height)
 		{
 			
@@ -43,7 +43,7 @@ namespace ExamCS
 
 			if (difference >= 300 && difference < 600) Penalty += 25;
 			else if (difference >= 600 && difference < 1000) Penalty += 50;
-			else if (difference >= 1000 || (speed <= 0 && height <= 0))
+			else if (difference >= 1000)
                 throw new AirplaneCrushed("Самолет разбился");          // Генерирует исключение «Самолет раз­бил­ся»
 
             if (Penalty >= 1000)
